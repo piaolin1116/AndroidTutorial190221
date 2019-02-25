@@ -62,6 +62,9 @@ public class CrimeLab {
         Cursor cursor = mDatebase.query(CrimeTable.NAME, null, whereClause, whereArgs, null, null, null);
         return new CrimeCursorWrapper(cursor);
     }
+    public void deleteCrime(Crime crime){
+        mDatebase.delete(CrimeTable.NAME, Cols.UUID+"=?", new String[]{ crime.getId().toString() });
+    }
 
     private CrimeLab(Context context){
         //mCrimes = new ArrayList<>();
