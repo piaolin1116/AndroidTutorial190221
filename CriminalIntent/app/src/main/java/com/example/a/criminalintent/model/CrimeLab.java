@@ -9,6 +9,7 @@ import com.example.a.criminalintent.datadase.CrimeBaseHelper;
 import com.example.a.criminalintent.datadase.CrimeCursorWrapper;
 import com.example.a.criminalintent.datadase.CrimeDbScheme;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -85,6 +86,11 @@ public class CrimeLab {
         values.put(Cols.TITLE,crime.getTitle());
         values.put(Cols.DATE,crime.getDate().getTime());
         values.put(Cols.SOLVED,crime.isSolved()?1:0);
+        values.put(Cols.SUSPECT, crime.getSuspect());
         return values;
+    }
+
+    public File getPhotoFile(Crime crime){
+        return new File(mContext.getFilesDir(), crime.getPhotoFilename());
     }
 }

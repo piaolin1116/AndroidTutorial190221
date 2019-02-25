@@ -6,16 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".CrimeFragment">
 
-    <TextView
-        android:text="제목"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:listSeparatorTextViewStyle"/>
-    <EditText
-        android:hint="@string/crime_title_hint"
-        android:id="@+id/crime_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="@android:color/darker_gray"
+                android:scaleType="centerCrop"
+                android:id="@+id/crime_photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />
+            <ImageButton
+                android:id="@+id/crime_camera"
+                android:src="@drawable/ic_camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="제목"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:listSeparatorTextViewStyle"/>
+            <EditText
+                android:hint="@string/crime_title_hint"
+                android:id="@+id/crime_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
     <TextView
         android:text="상세내역"
         android:layout_width="match_parent"
@@ -36,9 +70,18 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btnDelete"
-        android:text="삭제"
-        android:layout_width="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/crime_suspect_text"
+        android:text="용의자 선택"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/crime_report_text"
+        android:text="범죄 보고서 전송"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
