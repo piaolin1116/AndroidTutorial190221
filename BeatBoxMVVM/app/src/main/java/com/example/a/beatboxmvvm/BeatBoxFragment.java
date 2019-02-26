@@ -36,10 +36,10 @@ public class BeatBoxFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        FragmentBeatBoxBinding binding = DataBindingUtil.inflate(inflater,R.layout.fragment_beat_box,container,false);
-        binding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),3));
+        FragmentBeatBoxBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_beat_box, container, false);
+        binding.recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3) );
         binding.recyclerView.setAdapter(new SoundAdapter(mBeatBox.getSounds()));
-        return  binding.getRoot();
+        return binding.getRoot();
     }
 
     private class SoundHolder extends RecyclerView.ViewHolder {
