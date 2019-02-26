@@ -33,6 +33,12 @@ public class BeatBoxFragment extends Fragment {
         mBeatBox = new BeatBox(getActivity());
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mBeatBox.release();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
